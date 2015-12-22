@@ -14,9 +14,25 @@ function! OpenProjectDorfbook()
 
 endfunction
 
+" https://github.com/bqqbarbhg/roguos
+function! OpenProjectRoguos()
+
+	" Set to directory
+	NERDTree ros | normal cd
+
+	" Uses build.bat
+	set makeprg=build.bat
+
+	" Run and test
+	command! R !qemu-system-i386 -kernel bin\roguos.bin
+
+endfunction
+
 function! OpenProject(identifier)
 	if a:identifier ==? 'db'
 		call OpenProjectDorfbook()
+	elseif a:identifier ==? 'ros'
+		call OpenProjectRoguos()
 	endif
 endfunction
 
