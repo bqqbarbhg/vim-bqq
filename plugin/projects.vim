@@ -24,7 +24,7 @@ function! OpenProjectRoguos()
 	set makeprg=build.bat
 
 	" Run and test
-	command! R !qemu-system-i386 -kernel bin\roguos.bin
+	command! R !qemu-system-i386 -cdrom bin\roguos.iso
 
 endfunction
 
